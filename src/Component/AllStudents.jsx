@@ -13,7 +13,7 @@ export default function AllStudents() {
   }, []);
   async function fetchStudents() {
     try {
-      const res = await axios.get("http://your-serve.com/api/students");
+      const res = await axios.get("http://your-server.com/api/students");
       setStudents(res.data);
     } catch (err) {
       console.error(err);
