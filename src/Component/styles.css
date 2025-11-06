@@ -117,7 +117,7 @@ body,
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 420px;
+  max-width: 450px;
   padding: 48px 24px 40px;
   border-radius: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -154,11 +154,13 @@ body,
 
 @media (max-width: 480px) {
   .card {
+    max-width: 500px;
+    width: 100%;
     padding: 28px 20px 36px;
-    border-radius: 24px;
+    border-radius: 25px;
     border: 1px solid rgba(185, 255, 173, 0.475);
- 
   }
+  
 
   .title {
     font-size: 16px;
