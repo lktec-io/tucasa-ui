@@ -71,7 +71,7 @@ export default function Register() {
         <div className="profileImage">
           <img alt="pcm" src={logo} />
         </div>
-        <h2 class="subtitle typing">REGISTER WITH TUCASA TIA MBEYA...</h2>
+        <h2 class="subtitle typing">REGISTER WITH TUCASA TIA MBEYA...</h2> 
 
         <form className="form" onSubmit={handleSubmit}>
           <label>
@@ -161,7 +161,7 @@ export default function Register() {
             Leadership Position (optional)
             <input
               name="leadership_position"
-              placeholder="eg. chairman-Branch, CMZ, SHC"
+              placeholder="eg. chairman-Branch, SMZ, SHC"
               value={form.leadership_position}
               onChange={handleChange}
             />

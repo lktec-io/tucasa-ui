@@ -462,7 +462,7 @@ body,
   margin-left: 10px;
   background: rgba(0, 0, 0, 0.639);
   border: 1px solid rgba(202, 191, 191, 0.729);
-  padding: 8px 13px;
+  padding: 8px 12px;
   border-radius: 50%;
   font-size: 0.8em;
   font-weight: 100;
@@ -513,14 +513,16 @@ body,
 .baptized {
   background-color: rgba(0, 255, 157, 0.2);
   color: #00ff9d;
-  font-weight: bold;
+  font-weight: 100;
   border-radius: 5px;
   padding: 2px;
 }
 .not-baptized {
   background-color: rgba(255, 0, 0, 0.2);
   color: #ff6b6b;
-  font-weight: bold;
+  font-weight: 100;
+    border-radius: 5px;
+  padding: 2px;
 }
 
 .table-wrapper {
@@ -560,7 +562,7 @@ body,
 }
 
 .row {
-  padding: 10px;
+  padding: 10px ;
   border-bottom: 1px solid rgba(255, 255, 255, 0.652);
    font-size: 0.8em;
    font-weight: 100;
