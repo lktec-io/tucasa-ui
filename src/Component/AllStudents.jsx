@@ -13,7 +13,9 @@ export default function AllStudents() {
   }, []);
   async function fetchStudents() {
     try {
-      const res = await axios.get("https://registration.nardio.online/api/students");
+      const res = await axios.get(
+        "https://registration.nardio.online/api/students"
+      );
       setStudents(res.data);
     } catch (err) {
       console.error(err);
@@ -23,7 +25,8 @@ export default function AllStudents() {
   }
 
   const download = () => {
-    window.location.href = "https://registration.nardio.online/api/students/download";
+    window.location.href =
+      "https://registration.nardio.online/api/students/download";
   };
 
   return (
@@ -44,51 +47,57 @@ export default function AllStudents() {
           </div>
         </div>
 
-        <div className="table">
-          <div className="thead">
-            <div>S/N</div>
-            <div>Name</div>
-            <div>Phone</div>
-            <div>Email</div>
-            <div>Gender</div>
-            <div>Address</div>
-            <div>Baptism</div>
-            <div>Course</div>
-            <div>Year</div>
-            <div>Leadership</div>
-          </div>
+        <div className="table-wrapper">
+          <div className="table">
+            <div className="thead">
+              <div>S/N</div>
+              <div>Name</div>
+              <div>Phone</div>
+              <div>Email</div>
+              <div>Gender</div>
+              <div>Address</div>
+              <div>Baptism</div>
+              <div>Course</div>
+              <div>Year</div>
+              <div>Leadership</div>
+            </div>
 
-          {loading ? (
-            <p>Loading...</p>
-          ) : (
-            students.map((s, i) => (
-              <div className="row" key={s.id}>
-                <div>{i + 1}</div>
-                <div className="name">{s.full_name}</div>
-                <div>{s.phone}</div>
-                <div>{s.email}</div>
-                <div>{s.gender}</div>
-                <div>{s.address}</div>
-                <div
-                  className={
-                    s.baptism_status === "Yes" ? "baptized" : "not-baptized"
-                  }
-                >
-                  {s.baptism_status}
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              students.map((s, i) => (
+                <div className="row" key={s.id}>
+                  <div>{i + 1}</div>
+                  <div className="name">{s.full_name}</div>
+                  <div>{s.phone}</div>
+                  <div>{s.email}</div>
+                  <div>{s.gender}</div>
+                  <div>{s.address}</div>
+                  <div
+                    className={
+                      s.baptism_status === "Yes" ? "baptized" : "not-baptized"
+                    }
+                  >
+                    {s.baptism_status}
+                  </div>
+                  <div>{s.course}</div>
+                  <div>{s.year_of_study}</div>
+                  <div>{s.leadership_position}</div>
                 </div>
+              ))
+            )}
+          </div>
+        </div>
 
-                <div>{s.course}</div>
-                <div>{s.year_of_study}</div>
-                <div>{s.leadership_position}</div>
-              </div>
-            ))
-          )}
+        <div className="lastquote">
+          <p>Tucasa-tia@2025</p>
         </div>
       </div>
+
       <div className="bg-animation">
         <img src="./tucasa2.jpg" alt="bg1" />
         <img src="./tucasa.jpg" alt="bg2" />
-        {/* <img src="./tucasa2.jpg" alt="bg3" /> */}
+        <img src="./tucasa2.jpg" alt="bg3" />
       </div>
     </div>
   );

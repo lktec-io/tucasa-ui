@@ -253,11 +253,14 @@ body,
 }
 
 
+
+
+
 .modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,14 +269,14 @@ body,
 .modal-box {
   background: #0a0075;
   color: white;
-  padding: 30px 50px;
-  border-radius: 10px;
+  padding: 25px 60px;
+  border-radius: 8px;
   text-align: center;
-  border: 1px solid #0ff;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.86);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.149);
 }
 .modal-box button {
-  margin-top: 10px;
+  margin-top: 8px;
   background: #00bfff;
   color: #000;
   border: none;
@@ -281,6 +284,9 @@ body,
   border-radius: 5px;
   cursor: pointer;
 }
+
+
+
 
 
 .profileImage {
@@ -313,48 +319,63 @@ body,
     width: 60px;
   }
 }
-/* .subtitle {
-  font-size: 1.2em;
-  font-weight: 500;
-  color: var(--accent);
-  text-align: center;
 
-  line-height: 1.6;
-  margin-bottom: 0px;
-} */
 .typing {
   display: inline-block;
-  font-size: 1.2em;
-  font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 600;
   color: var(--accent);
-  text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid var(--accent);
+  position: relative;
   width: fit-content;
-  animation: typing 6s steps(30, end) infinite, blink 0.9s step-end infinite;
+  max-width: 100%;
+  animation: typing 6s steps(30, end) infinite;
 }
 
+/* the trailing dots (...) */
+.typing::after {
+  content: "...";
+  position: absolute;
+  right: -20px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+/* typing + deleting animation */
 @keyframes typing {
-  0% { width: 0 }
-  50% { width: 100% }
-  100% { width: 0 }
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 
-@keyframes blink {
-  /* 50% { border-color: transparent } */
+/* responsiveness */
+@media (max-width: 600px) {
+  .typing {
+    font-size: 1.2em;
+  }
 }
 
-.dots {
-  animation: dots 1.5s steps(3, end) infinite;
-}
 
-@keyframes dots {
-  0% { content: "" }
-  33% { content: "." }
-  66% { content: ".." }
-  100% { content: "..." }
-}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -479,49 +500,22 @@ body,
   border-bottom: 1px solid rgba(255, 255, 255, 0.411);
  padding-bottom:50px;
 }
+
+
+
 /* table */
-.table {
-  margin-top: 60px;
-  
-}
-.thead,
-.row {
-  display: grid;
-  grid-template-columns: 40px 120px 120px 160px 100px 160px 100px 120px 80px 140px;
-  gap: 8px;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid rgb(255, 255, 255);
-  font-weight: 100;
-  font-size: 13px;
-  text-align: left;
-}
-.row div {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e0ffe8;
-}
-
-
-.thead {
-  background-color: rgba(147, 147, 147, 0.491);
-  color: #bfecc8;
-  font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  padding: 10px 15px;
-  border-radius: 0px;
-}
-
 .row .name {
   font-weight: 100;
+ 
+  
 }
 
 .baptized {
   background-color: rgba(0, 255, 157, 0.2);
   color: #00ff9d;
   font-weight: bold;
+  border-radius: 5px;
+  padding: 2px;
 }
 .not-baptized {
   background-color: rgba(255, 0, 0, 0.2);
@@ -529,34 +523,51 @@ body,
   font-weight: bold;
 }
 
-.table {
-  overflow-x: auto;
+.table-wrapper {
+  overflow-x: auto; /* horizontal scroll only */
   width: 100%;
-  padding: 10px;
+  /* border-radius: 10px; */
+  /* border: 1px solid rgba(255,255,255,0.2); */
+  margin-top: 20px;
 }
 
-.thead, .row {
+.table {
+  width: max-content; /* important - allow wide content */
+  min-width: 100%;
+}
+
+.thead,
+.row {
   display: grid;
   grid-template-columns: 60px 200px 150px 200px 100px 120px 100px 100px 80px 150px;
   align-items: center;
   text-align: left;
-  gap: 8px;
+  gap: 5px;
+  width: max-content; /* ensures full width across scroll */
+  min-width: 100%;
 }
 
 .thead {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 12px;
-  font-weight: bold;
+  background: rgba(255, 255, 255, 0.32);
+  padding: 10px;
+  font-weight: 500;
   border-bottom: 1px solid rgba(255,255,255,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  font-size: 0.9em;
 }
 
 .row {
   padding: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.652);
+   font-size: 0.8em;
+   font-weight: 100;
 }
 
 .row:hover {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.07);
   transition: background 0.3s;
 }
 

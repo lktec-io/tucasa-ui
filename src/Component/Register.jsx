@@ -45,7 +45,7 @@ export default function Register() {
     setLoading(true);
     try {
       await axios.post("https://registration.nardio.online/api/register", form);
-      setModalMsg("Registration Successful!");
+      setModalMsg("Registration Successful!✅");
       setForm({
         full_name: "",
         gender: "",
@@ -71,9 +71,7 @@ export default function Register() {
         <div className="profileImage">
           <img alt="pcm" src={logo} />
         </div>
-        <h2 className="subtitle typing">
-          REGISTER WITH TUCASA TIA MBEYA<span className="dots">...</span>
-        </h2>
+        <h2 class="subtitle typing">REGISTER WITH TUCASA TIA MBEYA...</h2>
 
         <form className="form" onSubmit={handleSubmit}>
           <label>
@@ -120,7 +118,7 @@ export default function Register() {
             Address
             <input
               name="address"
-              placeholder="eg. DSM"
+              placeholder="eg. Mbeya Uyole, Bariadi Simiyu"
               value={form.address}
               onChange={handleChange}
             />
@@ -143,7 +141,7 @@ export default function Register() {
             Course
             <input
               name="course"
-              placeholder="eg. BAC, BPLM"
+              placeholder="eg. BAC, BPLM, BHRM"
               value={form.course}
               onChange={handleChange}
             />
@@ -163,7 +161,7 @@ export default function Register() {
             Leadership Position (optional)
             <input
               name="leadership_position"
-              placeholder="eg. chairman"
+              placeholder="eg. chairman-Branch, CMZ, SHC"
               value={form.leadership_position}
               onChange={handleChange}
             />
@@ -190,6 +188,7 @@ export default function Register() {
       <div className="bg-animation">
         <img src="./tucasa2.jpg" alt="bg1" />
         <img src="./tucasa.jpg" alt="bg2" />
+        <img src="./tucasa2.jpg" alt="bg1" />
       </div>
     </div>
   );
