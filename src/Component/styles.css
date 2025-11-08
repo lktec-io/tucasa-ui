@@ -281,15 +281,51 @@ body,
     width: 60px;
   }
 }
-.subtitle {
+/* .subtitle {
   font-size: 1.2em;
   font-weight: 500;
   color: var(--accent);
   text-align: center;
-  /* letter-spacing: 0.5px; */
+
   line-height: 1.6;
   margin-bottom: 0px;
+} */
+.typing {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: var(--accent);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+  width: fit-content;
+  animation: typing 6s steps(30, end) infinite, blink 0.9s step-end infinite;
 }
+
+@keyframes typing {
+  0% { width: 0 }
+  50% { width: 100% }
+  100% { width: 0 }
+}
+
+@keyframes blink {
+  /* 50% { border-color: transparent } */
+}
+
+.dots {
+  animation: dots 1.5s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0% { content: "" }
+  33% { content: "." }
+  66% { content: ".." }
+  100% { content: "..." }
+}
+
+
+
 
 .lastquote {
   width: 100%;

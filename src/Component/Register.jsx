@@ -26,7 +26,7 @@ export default function Register() {
     setLoading(true);
     setMsg("");
     try {
-      await axios.post("http://your-server.com/api/register", form);
+      await axios.post("https://registration.nardio.online/api/register", form);
       setMsg("Registration successful!");
       setForm({
         full_name: "",
@@ -52,16 +52,13 @@ export default function Register() {
       <div className="card">
          <div className="profileImage">
               <img
-                // style={{
-                //   height: "70px",
-                //   weight: "70px",
-                //   borderRadius: "0%"
-                // }}
                 alt="pcm"
                 src={logo}
               />
             </div>
-            <h2 className="subtitle">REGISTER WITH TUCASA TIA MBEYA</h2>
+           <h2 className="subtitle typing">REGISTER WITH TUCASA TIA MBEYA<span className="dots">...</span></h2>
+
+
 
         <form className="form" onSubmit={handleSubmit}>
           <label>

@@ -13,7 +13,7 @@ export default function AllStudents() {
   }, []);
   async function fetchStudents() {
     try {
-      const res = await axios.get("http://your-server.com/api/students");
+      const res = await axios.get("https://registration.nardio.online/api/students");
       setStudents(res.data);
     } catch (err) {
       console.error(err);
@@ -23,7 +23,7 @@ export default function AllStudents() {
   }
 
   const download = () => {
-    window.location.href = "http://your-server.com/api/students/download";
+    window.location.href = "https://registration.nardio.online/api/students/download";
   };
 
   return (
