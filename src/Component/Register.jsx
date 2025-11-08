@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
-import logo from './pcm.png'
+import logo from "./pcm.png";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -16,23 +16,41 @@ export default function Register() {
     leadership_position: "",
   });
   const [loading, setLoading] = useState(false);
-  const [msg, setMsg] = useState("");
+  const [modalMsg, setModalMsg] = useState("");
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // validation (leadership_position si lazima)
+    const requiredFields = [
+      "full_name",
+      "gender",
+      "address",
+      "baptism_status",
+      "email",
+      "phone",
+      "course",
+      "year_of_study",
+    ];
+    const empty = requiredFields.some((f) => !form[f]);
+
+    if (empty) {
+      setModalMsg("Fill All Details");
+      return;
+    }
+
     setLoading(true);
-    setMsg("");
     try {
       await axios.post("https://registration.nardio.online/api/register", form);
-      setMsg("Registration successful!");
+      setModalMsg("Registration Successful!");
       setForm({
         full_name: "",
-        gender: "Male",
+        gender: "",
         address: "",
-        baptism_status: "Baptized",
+        baptism_status: "",
         email: "",
         phone: "",
         course: "",
@@ -41,7 +59,7 @@ export default function Register() {
       });
     } catch (err) {
       console.error(err);
-      setMsg("Error: " + (err.response?.data?.error || err.message));
+      setModalMsg("Something went wrong!");
     } finally {
       setLoading(false);
     }
@@ -50,15 +68,12 @@ export default function Register() {
   return (
     <div className="page">
       <div className="card">
-         <div className="profileImage">
-              <img
-                alt="pcm"
-                src={logo}
-              />
-            </div>
-           <h2 className="subtitle typing">REGISTER WITH TUCASA TIA MBEYA<span className="dots">...</span></h2>
-
-
+        <div className="profileImage">
+          <img alt="pcm" src={logo} />
+        </div>
+        <h2 className="subtitle typing">
+          REGISTER WITH TUCASA TIA MBEYA<span className="dots">...</span>
+        </h2>
 
         <form className="form" onSubmit={handleSubmit}>
           <label>
@@ -68,7 +83,6 @@ export default function Register() {
               value={form.full_name}
               placeholder="Full name"
               onChange={handleChange}
-              required
             />
           </label>
 
@@ -79,9 +93,9 @@ export default function Register() {
               placeholder="Phone number"
               value={form.phone}
               onChange={handleChange}
-              required
             />
           </label>
+
           <label>
             Email
             <input
@@ -92,10 +106,11 @@ export default function Register() {
               onChange={handleChange}
             />
           </label>
+
           <label>
             Gender
             <select name="gender" value={form.gender} onChange={handleChange}>
-              <option>Select</option>
+              <option value="">Select</option>
               <option>Male</option>
               <option>Female</option>
             </select>
@@ -118,7 +133,7 @@ export default function Register() {
               value={form.baptism_status}
               onChange={handleChange}
             >
-              <option>Select</option>
+              <option value="">Select</option>
               <option>Yes</option>
               <option>No</option>
             </select>
@@ -143,6 +158,7 @@ export default function Register() {
               onChange={handleChange}
             />
           </label>
+
           <label>
             Leadership Position (optional)
             <input
@@ -156,17 +172,24 @@ export default function Register() {
           <button className="btn" type="submit" disabled={loading}>
             {loading ? "Submitting..." : "SUBMIT"}
           </button>
-
-          {msg && <p className="msg">{msg}</p>}
         </form>
         <div className="lastquote">
-                <p>Tucasa-tia@2025</p>
-              </div>
+          <p>Tucasa-tia@2025</p>
+        </div>
       </div>
+
+      {modalMsg && (
+        <div className="modal">
+          <div className="modal-box">
+            <p>{modalMsg}</p>
+            <button onClick={() => setModalMsg("")}>Okay</button>
+          </div>
+        </div>
+      )}
+
       <div className="bg-animation">
         <img src="./tucasa2.jpg" alt="bg1" />
         <img src="./tucasa.jpg" alt="bg2" />
-        <img src="./tucasa2.jpg" alt="bg3" />
       </div>
     </div>
   );
