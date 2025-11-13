@@ -96,8 +96,8 @@ export default function AllStudents() {
 
       <div className="bg-animation">
         <img src="./tucasa2.jpg" alt="bg1" />
-        <img src="./tucasa.jpg" alt="bg2" />
-        <img src="./tucasa2.jpg" alt="bg3" />
+        <img src="./tucasa2.jpg" alt="bg2" />
+        {/* <img src="./tucasa2.jpg" alt="bg3" /> */}
       </div>
     </div>
   );
