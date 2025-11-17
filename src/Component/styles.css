@@ -190,7 +190,7 @@ body,
   display: flex;
   flex-direction: column;
   font-size: 13px;
-  color: #a7e3bd;
+  color: #87f1a893;
 }
 .form input,
 .form select {
@@ -324,13 +324,13 @@ body,
   display: inline-block;
   font-size: 1.5em;
   font-weight: 600;
-  color: var(--accent);
+  color: rgba(0, 217, 255, 0.919);
   white-space: nowrap;
   overflow: hidden;
   position: relative;
   width: fit-content;
   max-width: 100%;
-  animation: typing 6s steps(30, end) infinite;
+  animation: typing 6s steps(80, end) infinite;
 }
 
 /* the trailing dots (...) */

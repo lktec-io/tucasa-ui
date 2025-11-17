@@ -72,7 +72,6 @@ export default function Register() {
           <img alt="pcm" src={logo} />
         </div>
         <h2 class="subtitle typing">REGISTER WITH TUCASA TIA MBEYA...</h2> 
-
         <form className="form" onSubmit={handleSubmit}>
           <label>
             Full Name
