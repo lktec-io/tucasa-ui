@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 :root {
   --accent: #00e56a;
@@ -10,6 +11,7 @@
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+ 
   color: #e5f5ea;
 }
 
@@ -79,7 +81,7 @@ body,
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(4, 4, 68, 0.532),
+    rgba(4, 4, 68, 0.862),
     rgba(17, 17, 136, 0.425)
   );
   z-index: 4; /* juu ya images */
@@ -121,7 +123,7 @@ body,
   padding: 48px 24px 40px;
   border-radius: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(35px) saturate(1.1);
+  backdrop-filter: blur(25px) saturate(1.1);
   overflow: visible;
   /* background: rgba(255, 255, 255, 0.05); */
   margin-top: 25px;
@@ -184,7 +186,7 @@ body,
   gap: 14px;
   width: 85%;
   margin-left: 20px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .form label {
   display: flex;
@@ -320,6 +322,17 @@ body,
   }
 }
 
+.sub{
+  display: flex;
+  align-items: center;
+  text-align: center;
+    color: rgba(0, 217, 255, 0.919);
+    font-size: 0.9em;
+    justify-content: center;
+    margin-top: 0px;
+     font-family: "Nunito", sans-serif;
+  
+}
 .typing {
   display: inline-block;
   font-size: 1.5em;
@@ -329,18 +342,19 @@ body,
   overflow: hidden;
   position: relative;
   width: fit-content;
+   font-family: "Nunito", sans-serif;
   max-width: 100%;
-  animation: typing 6s steps(80, end) infinite;
+  animation: typing 8s steps(30, end) infinite;
 }
 
 /* the trailing dots (...) */
-.typing::after {
+/* .typing::after {
   content: "...";
   position: absolute;
   right: -20px;
   color: var(--accent);
   opacity: 0.8;
-}
+} */
 
 /* typing + deleting animation */
 @keyframes typing {

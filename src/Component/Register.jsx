@@ -3,6 +3,7 @@ import axios from "axios";
 import "./styles.css";
 import logo from "./pcm.png";
 
+
 export default function Register() {
   const [form, setForm] = useState({
     full_name: "",
@@ -71,7 +72,8 @@ export default function Register() {
         <div className="profileImage">
           <img alt="pcm" src={logo} />
         </div>
-        <h2 class="subtitle typing">REGISTER WITH TUCASA TIA MBEYA...</h2> 
+        <h2 class="subtitle typing">REGISTER WITH TUCASA TIA . . .</h2> 
+       <h2 class="sub">SMZ MBEYA (SHC)</h2> 
         <form className="form" onSubmit={handleSubmit}>
           <label>
             Full Name
