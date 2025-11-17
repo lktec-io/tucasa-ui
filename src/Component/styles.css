@@ -210,11 +210,12 @@ body,
 .form input:focus,
 .form select:focus {
   background: rgba(255, 255, 255, 0.09);
-  box-shadow: 0 0 0 1px var(--accent);
+  box-shadow: 0 0 0 1px rgba(129, 173, 238, 0.746) ;
+ 
 }
 
 .form input::placeholder {
-  color: rgba(135, 172, 228, 0.959);
+  color: rgba(129, 173, 238, 0.959);
   font-weight: 100;
   font-size: 0.9em;
 }
