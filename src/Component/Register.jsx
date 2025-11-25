@@ -188,7 +188,7 @@ export default function Register() {
       <div className="bg-animation">
         <img src="./tucasa2.jpg" alt="bg1" />
         <img src="./tucasa2.jpg" alt="bg2" />
-        {/* <img src="./tucasa2.jpg" alt="bg1" /> */}
+        <img src="./tucasa2.jpg" alt="bg1" />
       </div>
     </div>
   );
