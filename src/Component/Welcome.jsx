@@ -26,8 +26,9 @@ export default function Welcome() {
         <span className="gear-icon">⚙️</span>
       </div>
        <div className="bgi-animation">
-        <img src="./tucasa.jpg" alt="bg1" />
+        <img src="./tucasa2.jpg" alt="bg1" />
         <img src="./tucasa2.jpg" alt="bg2" />
+        <img src="./pendo.jpg" alt="bg1" />
         <img src="./pendo.jpg" alt="bg1" />
       </div>
     </div>
