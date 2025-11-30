@@ -58,10 +58,18 @@ export default function Register() {
         year_of_study: "",
         leadership_position: "",
       });
-    } catch (err) {
-      console.error(err);
+    } 
+    
+    catch (err) {
+    console.error(err);
+
+    if (err.response && err.response.status === 409) {
+      setModalMsg("You are already registered!");
+    } else {
       setModalMsg("Something went wrong!");
-    } finally {
+    }
+}
+    finally {
       setLoading(false);
     }
   };
