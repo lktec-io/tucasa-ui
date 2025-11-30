@@ -267,7 +267,7 @@ body,
 .modal-box {
   background: #0a0075;
   color: white;
-  padding: 25px 60px;
+  padding: 35px 55px;
   border-radius: 8px;
   text-align: center;
   border: 1px solid rgba(0, 255, 255, 0.86);
@@ -571,9 +571,6 @@ body,
   background: linear-gradient(90deg, #00a02ed4);
   transform: none;
 }
-
-
-
 
 
 

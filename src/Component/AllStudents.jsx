@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 export default function AllStudents() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     fetchStudents();
   }, []);

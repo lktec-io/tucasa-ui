@@ -64,7 +64,7 @@ export default function Register() {
     console.error(err);
 
     if (err.response && err.response.status === 409) {
-      setModalMsg("You are already registered!");
+      setModalMsg("⚠️You are already registered!");
     } else {
       setModalMsg("Something went wrong!");
     }
