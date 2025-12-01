@@ -16,10 +16,10 @@ export default function Welcome() {
         <h2 className="welcome-title">Welcome</h2> 
         <p className="welcome-subtitle">Get started with Tucasa tia!</p>
         <div className="welcome-buttons">
-          <button className="join-btn" onClick={() => navigate("/register")}>
+          <button className="join-btn" onClick={() => navigate("/intro")}>
             Register  here!
           </button>
-          <button className="plain-btn" onClick={() => navigate("/register")}>Sign up</button>
+          <button className="plain-btn" onClick={() => navigate("/intro")}>Sign up</button>
         </div>
       </div>
       <div className="welcome-settings">
