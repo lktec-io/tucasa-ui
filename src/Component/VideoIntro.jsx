@@ -8,7 +8,7 @@ export default function VideoIntro() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/register");
-    }, 5000); // video ita-play sekunde 5
+    }, 4000); // video ita-play sekunde 5
 
     return () => clearTimeout(timer);
   }, [navigate]);
