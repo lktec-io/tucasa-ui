@@ -1,0 +1,13 @@
+.receipt-wrapper { background: white; padding: 16px; width: 210mm; /* make width A4-like */ }
+.receipt { font-family: Arial, sans-serif; color: #111; max-width: 210mm; box-shadow: none; }
+.items { margin-top: 12px; }
+.item { display:flex; justify-content: space-between; padding:4px 0; border-bottom: 1px dashed #eee; }
+.actions { margin-bottom: 12px; }
+button { margin-right: 8px; padding: 8px 12px; cursor: pointer; }
+
+/* Print media if user prints from browser */
+@media print {
+  body * { visibility: hidden; }
+  .receipt-wrapper, .receipt-wrapper * { visibility: visible; }
+  .receipt-wrapper { position: absolute; left: 0; top: 0; width: 100%; }
+}

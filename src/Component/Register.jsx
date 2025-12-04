@@ -81,7 +81,7 @@ export default function Register() {
           <img alt="pcm" src={logo} />
         </div>
         <h2 class="subtitle typing">REGISTER WITH TUCASA TIA . . .</h2> 
-       <h2 class="sub">SMZ MBEYA (SHC)</h2> 
+       <h2 class="sub">(TIA MBEYA CAMPUS)</h2> 
         <form className="form" onSubmit={handleSubmit}>
           <label>
             Full Name
@@ -195,7 +195,7 @@ export default function Register() {
 
       <div className="bg-animation">
         <img src="./tucasa2.jpg" alt="bg1" />
-        <img src="./tucasa2.jpg" alt="bg2" />
+        {/* <img src="./tucasa2.jpg" alt="bg2" /> */}
         <img src="./tucasa2.jpg" alt="bg1" />
       </div>
     </div>

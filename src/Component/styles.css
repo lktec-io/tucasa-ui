@@ -125,7 +125,7 @@ body,
   backdrop-filter: blur(25px) saturate(1.1);
   overflow: visible;
   /* background: rgba(255, 255, 255, 0.05); */
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 20px;
   border: 1px solid rgba(180, 255, 173, 0.471);
 
@@ -160,7 +160,7 @@ body,
     max-width: 500px;
     width: 100%;
     padding: 28px 20px 36px;
-    border-radius: 25px;
+    border-radius: 20px;
     border: 1px solid rgba(185, 255, 173, 0.475);
   }
 
